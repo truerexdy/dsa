@@ -11,12 +11,17 @@ int linear_search(int a[], int key, int size){
 }
 
 int main(){
-    int a[10];
+    int n = 16;
+    int a[n];
     int size = sizeof(a)/sizeof(a[0]);
-    for(int i=0; i<10; i++){
-        a[i] = rand()%5;
+    for(int i=0; i<n; i++){
+        a[i] = rand()%n;
     }
-    int key = rand()%5;
+    for(int i=0; i<n; i++){
+        printf("%d ", a[i]);
+    }
+    int key = rand()%n;
+    printf("\nKey %d\n", key);
     int ind = linear_search(a,key,size);
     if(ind == -1){
         printf("Key not found.\n");
