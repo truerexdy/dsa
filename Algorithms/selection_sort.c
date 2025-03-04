@@ -9,7 +9,7 @@ void swap(int* a, int* b){
 }
 
 int* selection_sort(int* arr, int size){
-    for(int i=0; i<size; i++){
+    for(int i=0; i<size-1; i++){
         int min = i;
         for(int j=i; j<size; j++){
             if(arr[min] > arr[j]){
@@ -24,7 +24,7 @@ int* selection_sort(int* arr, int size){
 int main(){
     clock_t start, end;
     double cpu_time_used;
-    const int n=32;
+    const int n=16;
     int a[n];
     int size = sizeof(a)/sizeof(a[0]);
     for(int i=0; i<n; i++){
@@ -44,6 +44,6 @@ int main(){
         printf("%d ", a[i]);
     }
     cpu_time_used = ((double) (end-start))/CLOCKS_PER_SEC;
-    printf("\nExecution Time %lf \n", cpu_time_used);
+    printf("\nExecution Time %.2e \n", cpu_time_used);
     return 0;
 }
