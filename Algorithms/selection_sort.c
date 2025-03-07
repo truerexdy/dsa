@@ -24,7 +24,7 @@ int* selection_sort(int* arr, int size){
 int main(){
     clock_t start, end;
     double cpu_time_used;
-    const int n=16;
+    const int n=5120;
     int a[n];
     int size = sizeof(a)/sizeof(a[0]);
     for(int i=0; i<n; i++){
