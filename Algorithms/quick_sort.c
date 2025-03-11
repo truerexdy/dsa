@@ -1,8 +1,3 @@
-
-DuckDuckGo did not detect any trackers. More
-Unable to verify sender identity
- 
-Report Spam
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
