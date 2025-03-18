@@ -56,8 +56,7 @@ void merge_sort(int* a, int l, int h) {
 }
 
 int main() {
-    const int N = 8;
-    clock_t start = clock();
+    const int N = 10000;
     int* a = (int*)calloc(N, sizeof(int));
     for (int i = 0; i < N; i++) {
         a[i] = rand() % N;
@@ -66,14 +65,15 @@ int main() {
     for (int i = 0; i < N; i++) {
         printf("%d ", a[i]);
     }
+    clock_t start = clock();
     merge_sort(a, 0, N-1);
+    clock_t end = clock();
     printf("\n");
     printf("\nAfter:\n");
     for (int i = 0; i < N; i++) {
         printf("%d ", a[i]);
     }
     printf("\n");
-    clock_t end = clock();
     double exectime = (double)(end-start)/CLOCKS_PER_SEC;
     printf("\n Exec Time: %e\n", exectime);
     free(a);
