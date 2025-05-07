@@ -3,7 +3,6 @@
 class graph{
     private:
     int* visited;
-    int* queue;
     int size = 10;
 
     public:
@@ -17,7 +16,6 @@ class graph{
             }
         }
         this->visited = new int[this->size];
-        this->queue = new int[this->size];
     }
 
     int get_size(){
@@ -43,4 +41,17 @@ class graph{
             std::cout << std::endl;
         }
     }    
+
+    void dfs(int v){
+        if(v >= this->size){
+            return;
+        }
+        std::cout << v << std::endl;
+        this->visited[v] = 1;
+        for(int i=0; i<this->size; i++){
+            if(this->array[v][i] == 1 && this->visited[i] != 1){
+                this->dfs(i);
+            }
+        }
+    }
 };
