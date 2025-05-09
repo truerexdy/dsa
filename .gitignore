@@ -87,5 +87,5 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-
+*.out
 .vscode
