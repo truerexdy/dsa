@@ -9,10 +9,10 @@ int main(){
         std::cerr << "Size must be in [2,7], since 8x4=32 but number of alphabets=26" << std::endl;
         return 1;
     }
-    char* top = (char*)calloc(n, sizeof(char));
-    char* bottom = (char*)calloc(n, sizeof(char));
-    char* left = (char*)calloc(n-2, sizeof(char));
-    char* right = (char*)calloc(n-2, sizeof(char));
+    char* top = new char[n];
+    char* bottom = new char[n];
+    char* left = new char[n-2];
+    char* right = new char[n-2];
     char current = 'A';
     for(int i=0; i<n; i++){
         top[i] = current++;
