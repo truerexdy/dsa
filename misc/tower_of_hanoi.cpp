@@ -3,13 +3,14 @@
 #include <stdexcept>
 #include <string>
 
-void toh(char src, char temp, char dest, int n){
+void toh(char src, char temp, char dest, int n, int* moves){
     if(n<1){
         return;
     }
-    toh(src, dest, temp, n-1);
+    toh(src, dest, temp, n-1, moves);
     std::cout << src << " -> " << dest << std::endl;
-    toh(temp, src, dest, n-1);
+    toh(temp, src, dest, n-1, moves);
+    *moves += 1;
     return;
 }
 
@@ -19,6 +20,7 @@ int main(int argc, char* argv[]){
         return 1;
     }
     int n = 0;
+    static int moves = 0;
     try{
         n = std::stoi(argv[1]);
         if(n<1){
@@ -35,6 +37,7 @@ int main(int argc, char* argv[]){
             std::cerr << err << std::endl;
         }
     }
-    toh('A', 'B', 'C', n);
+    toh('A', 'B', 'C', n, &moves);
+    std::cout << "Number of Moves = " << moves << std::endl;
     return 0;
 }
